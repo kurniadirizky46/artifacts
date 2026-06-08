@@ -30,7 +30,8 @@ const realms = [
     unlocked: true, 
     stars: 7,
     color: "violet",
-    games: ["Trig Archer", "Unit Circle Defense", "Wave Rider"]
+    games: ["Trig Archer", "Unit Circle Defense", "Wave Rider"],
+    link: "/game/trig-archer"
   },
   { 
     id: 4, 
@@ -39,16 +40,18 @@ const realms = [
     unlocked: true, 
     stars: 5,
     color: "amber",
-    games: ["Marbleslides", "Graph Manipulator", "Function Duel"]
+    games: ["Marbleslides", "Graph Manipulator", "Function Duel"],
+    link: "/game/marbleslides"
   },
   { 
     id: 5, 
     name: "Derivative Mountains", 
     description: "Rates of change", 
-    unlocked: false, 
+    unlocked: true, 
     stars: 0,
     color: "rose",
-    games: ["Derivative Racer", "Tangent Slider", "Optimization Challenge"]
+    games: ["Derivative Racer", "Tangent Slider", "Optimization Challenge"],
+    link: "/game/derivative-racer"
   },
   { 
     id: 6, 
@@ -111,7 +114,7 @@ export default function WorldMap() {
 
               {realm.unlocked ? (
                 <Link 
-                  href={`/game/${realm.id}`} 
+                  href={realm.link || `/game/${realm.id}`} 
                   className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-white py-4 font-semibold text-black transition hover:bg-zinc-200"
                 >
                   Enter Realm <ArrowRight className="h-4 w-4" />
